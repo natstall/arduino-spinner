@@ -1,6 +1,6 @@
 #include <math.h>
 
-const int buttonPin = 7;
+const int buttonPin = 11;
 const int ledPair1 = 3;
 const int ledPair2 = 4;
 const int ledPair3 = 5;
@@ -13,7 +13,7 @@ const int ledPair8 = 10;
 int buttonState;
 
 long randomNum;
-int numPins = 4;
+int numPins = 8;
 int currentPin = 0;
 
 int ledArray[8] = {ledPair1, ledPair2, ledPair3, ledPair4,
@@ -49,9 +49,9 @@ void loop() {
         digitalWrite(ledArray[i%numPins], HIGH);
         double di = pow(i,1.5);
         int wait = di;
-        delay(wait);
-        digitalWrite(ledArray[i%numPins], LOW);
         delay(100);
+        digitalWrite(ledArray[i%numPins], LOW);
+        delay(wait);
         currentPin = i % numPins;
         }
       for (int n = 0; n < 3; n++){
